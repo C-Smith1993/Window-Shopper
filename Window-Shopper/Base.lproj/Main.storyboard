@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,24 +32,46 @@
                                     <constraint firstAttribute="height" constant="60" id="jY7-tj-UHR"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63I-Ds-WRK" customClass="CurrencyTxtField" customModule="Window_Shopper" customModuleProvider="target">
-                                <rect key="frame" x="48" y="163" width="278" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63I-Ds-WRK" customClass="CurrencyTxtField" customModule="Window_Shopper" customModuleProvider="target">
+                                <rect key="frame" x="36" y="150" width="303" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="MBb-Oe-ND6"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MH1-LO-XR8" customClass="CurrencyTxtField" customModule="Window_Shopper" customModuleProvider="target">
+                                <rect key="frame" x="36" y="215" width="303" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="eIJ-Vm-PBH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="MH1-LO-XR8" firstAttribute="leading" secondItem="63I-Ds-WRK" secondAttribute="leading" id="33h-SI-Hmm"/>
                             <constraint firstItem="4gb-fA-N3w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3pp-Ru-IMK"/>
                             <constraint firstItem="4gb-fA-N3w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4vL-B9-8AV"/>
                             <constraint firstAttribute="trailing" secondItem="4gb-fA-N3w" secondAttribute="trailing" id="B4F-v9-a4Z"/>
+                            <constraint firstItem="MH1-LO-XR8" firstAttribute="top" secondItem="63I-Ds-WRK" secondAttribute="bottom" constant="25" id="JCH-Sk-Mp4"/>
+                            <constraint firstItem="63I-Ds-WRK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="RO0-ll-Tqs"/>
+                            <constraint firstItem="MH1-LO-XR8" firstAttribute="trailing" secondItem="63I-Ds-WRK" secondAttribute="trailing" id="kFm-1F-lmX"/>
+                            <constraint firstItem="MH1-LO-XR8" firstAttribute="height" secondItem="63I-Ds-WRK" secondAttribute="height" id="moX-k4-flP"/>
                             <constraint firstItem="Zec-0W-84L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="onz-pD-uhC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="63I-Ds-WRK" secondAttribute="trailing" constant="20" id="qMe-3C-2Qx"/>
+                            <constraint firstItem="63I-Ds-WRK" firstAttribute="top" secondItem="Zec-0W-84L" secondAttribute="bottom" constant="35" id="v0x-jz-4x0"/>
                             <constraint firstItem="Zec-0W-84L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="w5F-id-ckf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4gb-fA-N3w" secondAttribute="bottom" id="wyS-jf-xlC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="priceTxt" destination="MH1-LO-XR8" id="DWu-h7-HB0"/>
+                        <outlet property="wageTxt" destination="63I-Ds-WRK" id="W4r-Dw-DK5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

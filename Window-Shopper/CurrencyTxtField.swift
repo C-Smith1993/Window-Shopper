@@ -8,27 +8,37 @@
 
 import UIKit
 
+@IBDesignable
+
 class CurrencyTxtField: UITextField {
     
+    // This function updates the interface builder so that the custom code matches.
+    override func prepareForInterfaceBuilder() {
+        customizeView()
+    }
+    
+    // This function is called at runtime.
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        customizeView()
+    }
+    
+    // This function holds all of the custom view attributes.
+    func customizeView(){
         backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.25)
         layer.cornerRadius = 5.0
         textAlignment = .center
         
-        // Placeholder is a property of the text field, that's why I have access to it.
+    // Placeholder is a property of the text field, that's why I have access to it.
         if let p = placeholder{
             
             let place = NSAttributedString(string: p, attributes: [NSForegroundColorAttributeName : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
             
-            // If this is set here, it will override the regular placeholder
+    // If this is set here, it will override the regular placeholder.
             attributedPlaceholder = place
             textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
-        
     }
-    
 }
 
 
